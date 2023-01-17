@@ -4,11 +4,12 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Header from "./header";
+import ShareIcons from "./share-icons";
 
 const name = 'Your Name';
 export const siteTitle = 'Turdef';
 
-export default function Master({ children, home }) {
+export default function Master({ children}) {
     return (
         <>
             <Head>
@@ -16,6 +17,10 @@ export default function Master({ children, home }) {
             </Head>
             <div className="main-wrap">
                <Header />
+                <ShareIcons />
+                <main className="position-relative">
+                    {children}
+                </main>
             </div>
         </>
 

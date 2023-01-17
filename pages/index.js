@@ -5,6 +5,8 @@ import {getSortedPostsData} from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import Master from "../components/master";
+import Banner from "../components/banner";
+import Categories from "../components/categories";
 
 export async function getStaticProps() {
     const allPostsData = getSortedPostsData();
@@ -17,7 +19,28 @@ export async function getStaticProps() {
 
 export default function Home({allPostsData}) {
     return (
-        <Master />
+        <Master >
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12 col-md-9">
+                        <div className="row">
+                            <div className="col-lg-4 col-md-4">
+                                <Banner no={1} page="Anasayfa" type="A" />
+                            </div>
+                            <div className="col-lg-4 col-md-4">
+                                <Banner no={2} page="Anasayfa" type="A" />
+                            </div>
+                            <div className="col-lg-4 col-md-4">
+                                <Banner no={3} page="Anasayfa" type="A" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <Categories />
+                </div>
+            </div>
+        </Master>
         /*<Layout home>
             <Head>
                 <title>{siteTitle}</title>
